@@ -9,11 +9,8 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-if(NOT DEFINED INSTALL_EXAMPLESDIR)
-  set(INSTALL_EXAMPLESDIR "examples")
-endif()
 
-set(INSTALL_EXAMPLEDIR "${INSTALL_EXAMPLESDIR}")
+add_subdirectory(VisualManager)
 
 find_package(Qt6 COMPONENTS Core)
 find_package(Qt6 COMPONENTS Gui)
@@ -51,6 +48,7 @@ target_link_libraries(planets-qml PUBLIC
     Qt::Network
     Qt::Qml
     Qt::Quick
+    VisualManager
 )
 
 

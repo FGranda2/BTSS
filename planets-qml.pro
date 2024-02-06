@@ -1,6 +1,3 @@
-!include( ../examples.pri ) {
-    error( "Couldn't find the examples.pri file!" )
-}
 
 QT += qml quick \
     concurrent \
@@ -8,14 +5,19 @@ QT += qml quick \
     3dquick 3dquickrender 3dquickinput 3dquickextras \
     network
 
-CONFIG += resources_big c++11
+CONFIG += resources_big c++20
+
+INCLUDEPATH += \
+    VisualManager/
 
 HEADERS += \
-    networkcontroller.h
+    networkcontroller.h \
+    VisualManager/genericSpaceObject.h
 
 SOURCES += \
     main.cpp \
-    networkcontroller.cpp
+    networkcontroller.cpp \
+    VisualManager/genericSpaceObject.cc
 
 OTHER_FILES += \
     QML/*.qml \
