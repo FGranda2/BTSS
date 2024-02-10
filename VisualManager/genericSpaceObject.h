@@ -24,20 +24,37 @@ public:
     Q_PROPERTY(QString              ephem_type          READ ephem_type         NOTIFY ephem_typeChanged)       // OBSERVER, VECTORS, ELEMENTS, SPK, APPROACH
     Q_PROPERTY(QString              email_addr          READ email_addr         NOTIFY email_addrChanged)       // in case we mess up XD
 
-    
 
+    // Property getters
+    QString format(void)        { return _format; }
+    int     command(void)       { return _command; }
+    bool    obj_data(void)      { return _obj_data; }
+    bool    make_ephem(void)    { return _make_ephem; }
+    QString ephem_type(void)    { return _ephem_type; }
+    QString email_addr(void)    { return _email_addr; }
 
     
 
 signals:
-    
+    void formatChanged      (void);
+    void commandChanged     (void);
+    void obj_dataChanged    (void);
+    void make_ephemChanged  (void);
+    void ephem_typeChanged  (void);
+    void email_addrChanged  (void);
 
 private slots:
     
 
 private:
     QString     _objectName;
-    
+    QString     _format;
+    int         _command;
+    bool        _obj_data;
+    bool        _make_ephem;
+    QString     _ephem_type;
+    QString     _email_addr;
+
 };
 
 #endif
